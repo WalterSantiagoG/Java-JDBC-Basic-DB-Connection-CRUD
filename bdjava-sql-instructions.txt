@@ -1,0 +1,45 @@
+--
+-- Base de datos: `bdjava`
+--
+
+--
+-- Estructura de tabla para la tabla `employees`
+--
+
+CREATE TABLE `employees` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(64) DEFAULT NULL,
+  `pa_surname` varchar(64) DEFAULT NULL,
+  `ma_surname` varchar(64) DEFAULT NULL,
+  `email` varchar(64) DEFAULT NULL,
+  `salary` decimal(10,2) DEFAULT NULL,
+  `curp` varchar(18) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `employees`
+--
+
+INSERT INTO `employees` (`id`, `first_name`, `pa_surname`, `ma_surname`, `email`, `salary`, `curp`) VALUES
+(1, 'Irving', 'Juarez', 'Johnson', 'jane.smith@example.com', '97000.00', NULL),
+(2, 'Michael', 'Johnson', 'Brown', 'michael.johnson@example.com', '95000.00', NULL),
+(3, 'Emily', 'Brown', 'Davis', 'emily.brown@example.com', '52000.00', NULL),
+(4, 'David', 'Davis', 'Wilson', 'david.davis@example.com', '58000.00', NULL),
+(5, 'Diego', 'Pimentel', 'Gutierrez', 'diego@mail.com', '7000000.00', NULL),
+(6, 'Edwin', 'Villa', 'Acosta', 'evilla@mail.com', '70000.00', NULL),
+(7, 'America', 'Lopez', 'Villa', 'ame2@mail.com', '9500.00', 'AMEC234Y9152478TOU'),
+(8, 'Diego', 'Lechuga', 'Pimentel', 'diego@example.com', '890000.00', NULL);
+
+--
+-- Indices de la tabla `employees`
+--
+ALTER TABLE `employees`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `curp_UNIQUE` (`curp`);
+
+--
+-- AUTO_INCREMENT de la tabla `employees`
+--
+ALTER TABLE `employees`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
